@@ -10,23 +10,26 @@ primary_cta_url: "#framework"
 secondary_cta_label: View on GitHub
 secondary_cta_url: https://github.com/mgifford/sustainability.md
 code_card_title: Simple Sample SUSTAINABILITY.md
-code_card_link_label: See full SUSTAINABILITY.md policy
+code_card_link_label: See full starter policy
 code_card_link_url: ./README.md
 code_snippet: |
   # SUSTAINABILITY.md
 
-  ## Core policy
-  - Transparency and disclosure
-  - Operational governance
-  - Automation and guardrails
+  ## Team commitment
+  - We will improve measurable impact every release
+  - We treat sustainability like reliability and accessibility
+
+  ## Accessibility as code
+  - Run a11y checks in CI on pull requests
+  - Block merges on new critical accessibility failures
 
   ## AI usage policy
   - Prefer deterministic alternatives first
-  - Justify each AI call as an energy event
+  - Keep prompts minimal and disclose AI use in PRs
 
-  ## Shift processing
-  - Time shift to lower-carbon windows
-  - Space shift to cleaner regions where possible
+  ## Sustainability as code
+  - Enforce page-weight and request budgets in CI
+  - Require justification for third-party and AI-heavy additions
 why_heading: Why SUSTAINABILITY.md?
 framework_heading: The Framework
 framework_cards:
@@ -38,6 +41,12 @@ framework_cards:
     body: Enforce page-weight budgets, third-party review, media optimization, and regression tracking in CI.
 examples_heading: Reference Examples
 reference_cards:
+  - title: Full Template
+    label: SUSTAINABILITY-template.md
+    url: ./SUSTAINABILITY-template.md
+  - title: Action Playbook
+    label: Team + AI implementation guide
+    url: ./action-playbook/
   - title: Policy File
     label: README.md
     url: ./README.md

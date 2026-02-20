@@ -134,6 +134,8 @@ Add this to `.cursorrules`, `AGENTS.md`, or your system prompt:
 ## Repo contents
 
 - `README.md`: policy and implementation model.
+- `SUSTAINABILITY-template.md`: full reusable policy template for other teams.
+- `action-playbook.md`: action-oriented checklist for teams and AI agents.
 - `WSG_REFERENCES.yaml`: machine-readable WSG and STAR mapping.
 - `CONTRIBUTING.md`: participation guide for contributors.
 
@@ -141,6 +143,8 @@ Add this to `.cursorrules`, `AGENTS.md`, or your system prompt:
 
 - GitHub Pages build fetches the latest `guidelines.json` from the WSG source at build time.
 - The repository intentionally does not track a committed local copy of `guidelines.json`.
+- CI checks run on pushes and pull requests for Markdown linting, YAML linting/validation, workflow linting, local link checking, and Jekyll build verification.
+- Lighthouse CI runs on every non-draft pull request against `https://mgifford.github.io/sustainability.md/` with category score gates (starter thresholds), and should be tightened over time toward 100 in all categories.
 
 ## Contributing
 

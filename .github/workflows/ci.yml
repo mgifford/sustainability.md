@@ -1,0 +1,95 @@
+name: CI checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  content-quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: |
+            **/*.md
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install YAML tooling
+        run: |
+          python -m pip install --upgrade pip
+          pip install yamllint pyyaml
+
+      - name: Lint YAML
+        run: |
+          yamllint -d "{extends: default, rules: {line-length: {max: 180}, truthy: disable}}" \
+            .github/workflows/*.yml _config.yml WSG_REFERENCES.yaml
+
+      - name: Validate WSG_REFERENCES.yaml structure
+        run: |
+          python - <<'PY'
+          import sys
+          import yaml
+
+          with open('WSG_REFERENCES.yaml', 'r', encoding='utf-8') as f:
+              data = yaml.safe_load(f)
+
+          if not isinstance(data, dict):
+              raise SystemExit('WSG_REFERENCES.yaml must parse to a mapping/object at top level')
+
+          required_top_keys = ['wsg_references', 'star_mappings']
+          missing = [k for k in required_top_keys if k not in data]
+          if missing:
+              raise SystemExit(f'Missing top-level keys in WSG_REFERENCES.yaml: {missing}')
+
+          print('WSG_REFERENCES.yaml structure looks valid.')
+          PY
+
+      - name: Check local links in Markdown
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress --verbose ./**/*.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  workflow-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Lint GitHub Actions workflows
+        uses: rhysd/actionlint@v1
+
+  jekyll-build-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch latest WSG guidelines.json
+        run: |
+          set -euo pipefail
+          curl -fsSL "https://w3c.github.io/sustainableweb-wsg/guidelines.json" -o guidelines.json
+          python -m json.tool guidelines.json >/dev/null
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
