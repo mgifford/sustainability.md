@@ -2,6 +2,10 @@
 
 > **Project instructions for reducing digital emissions, resource use, and waste across product, code, and operations.**
 
+> **Status:** Draft (work in progress).
+>
+> **AI disclosure:** This repository has been developed with AI-assisted drafting and implementation support, with human review and editing.
+
 Use this file like `SECURITY.md` or `AGENTS.md`: as an operational policy for humans and AI agents.
 
 ---
@@ -9,8 +13,12 @@ Use this file like `SECURITY.md` or `AGENTS.md`: as an operational policy for hu
 ## Why this exists
 
 - Set a single source of truth for web sustainability decisions.
+- Build team habits that make sustainability part of day-to-day decisions.
+- Incorporate practical best practices into how digital resources are designed, built, and maintained.
+- Turn ideas from the Web Sustainability Guidelines into implementation choices teams can apply now.
 - Make trade-offs explicit (performance, UX, business, and impact).
 - Define hard rules for when AI is allowed, and when it is not.
+- Serve as a reminder and call to action: be more sustainable today than yesterday, and prioritize progress over perfection.
 
 ---
 
@@ -127,6 +135,12 @@ Add this to `.cursorrules`, `AGENTS.md`, or your system prompt:
 
 - `README.md`: policy and implementation model.
 - `WSG_REFERENCES.yaml`: machine-readable WSG and STAR mapping.
+- `CONTRIBUTING.md`: participation guide for contributors.
+
+## Automation
+
+- GitHub Pages build fetches the latest `guidelines.json` from the WSG source at build time.
+- The repository intentionally does not track a committed local copy of `guidelines.json`.
 
 ## Contributing
 

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.meta_title | default: site.title }}</title>
+    <meta
+      name="description"
+      content="{{ page.description | default: site.description }}"
+    />
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <main>
+        <header class="hero">
+          <div class="wrap hero-grid">
+            <div>
+              <h1>{{ page.hero_title | default: site.title }}</h1>
+              <p class="lede">{{ page.hero_lede_1 }}</p>
+              <p class="lede">{{ page.hero_lede_2 }}</p>
+              <div class="cta-row">
+                <a class="button primary" href="{{ page.primary_cta_url }}">{{ page.primary_cta_label }}</a>
+                <a class="button secondary" href="{{ page.secondary_cta_url }}">{{ page.secondary_cta_label }}</a>
+              </div>
+            </div>
+            <aside class="code-card" aria-label="Simple sample SUSTAINABILITY.md snippet">
+              <h2>{{ page.code_card_title }}</h2>
+              <p><a href="{{ page.code_card_link_url }}">{{ page.code_card_link_label }}</a></p>
+              <pre><code>{{ page.code_snippet }}</code></pre>
+            </aside>
+          </div>
+        </header>
+
+        <section id="why">
+          <div class="wrap">
+            <h2>{{ page.why_heading }}</h2>
+            <div class="prose">
+              {{ content }}
+            </div>
+          </div>
+        </section>
+
+        <section id="framework">
+          <div class="wrap">
+            <h2>{{ page.framework_heading }}</h2>
+            <div class="cards">
+              {% for card in page.framework_cards %}
+              <article class="card">
+                <h3>{{ card.title }}</h3>
+                <p>{{ card.body }}</p>
+              </article>
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+
+        <section id="examples">
+          <div class="wrap">
+            <h2>{{ page.examples_heading }}</h2>
+            <div class="cards">
+              {% for item in page.reference_cards %}
+              <article class="card">
+                <h3>{{ item.title }}</h3>
+                <p><a href="{{ item.url }}">{{ item.label }}</a></p>
+              </article>
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+
+        <section id="adopt">
+          <div class="wrap">
+            <h2>{{ page.adopt_heading }}</h2>
+            <div class="steps">
+              {% for step in page.adopt_steps %}
+              <article class="step">
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.body }}</p>
+              </article>
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>
+          <strong>{{ page.footer_title }}</strong> {{ page.footer_text }}
+        </p>
+        <p>
+          <a href="{{ '/README.md' | relative_url }}">README</a>
+          ·
+          <a href="{{ '/WSG_REFERENCES.yaml' | relative_url }}">WSG References</a>
+          ·
+          <a href="{{ page.secondary_cta_url }}">GitHub Repo</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
