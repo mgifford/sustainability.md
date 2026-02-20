@@ -3,42 +3,42 @@ layout: default
 meta_title: SUSTAINABILITY.md · SUSTAINABILITY.md
 description: The open standard for sustainability transparency, governance, and lower-impact engineering workflows.
 hero_title: SUSTAINABILITY.md
-hero_lede_1: A practical, open format for documenting sustainability policy, governance, and engineering guardrails.
-hero_lede_2: Think of SUSTAINABILITY.md as a <strong>README for digital sustainability</strong>: a predictable place for humans and AI coding agents to find your standards.
-primary_cta_label: Explore Framework
-primary_cta_url: "#framework"
+hero_lede_1: A practical, open format for documenting sustainability commitments, engineering guardrails, and measurable progress.
+hero_lede_2: Think of SUSTAINABILITY.md as a <strong>README for digital sustainability</strong> — a predictable place where contributors, maintainers, and AI agents can find your standards.
+primary_cta_label: Start with the Template
+primary_cta_url: ./SUSTAINABILITY-template.md
 secondary_cta_label: View on GitHub
 secondary_cta_url: https://github.com/mgifford/sustainability.md
 code_card_title: Simple Sample SUSTAINABILITY.md
-code_card_link_label: See full starter policy
+code_card_link_label: See full policy example
 code_card_link_url: ./README.md
 code_snippet: |
   # SUSTAINABILITY.md
 
-  ## Team commitment
-  - We will improve measurable impact every release
-  - We treat sustainability like reliability and accessibility
+  ## Commitment
+  - Sustainability is part of our definition of done
+  - We improve month over month, not once per year
 
-  ## Accessibility as code
-  - Run a11y checks in CI on pull requests
-  - Block merges on new critical accessibility failures
+  ## CI guardrails
+  - Block on critical accessibility regressions
+  - Block on page-weight and request-budget regressions
 
-  ## AI usage policy
-  - Prefer deterministic alternatives first
-  - Keep prompts minimal and disclose AI use in PRs
+  ## AI policy
+  - Prefer deterministic tools first
+  - Keep prompts scoped, log usage, and avoid waste
 
-  ## Sustainability as code
-  - Enforce page-weight and request budgets in CI
-  - Require justification for third-party and AI-heavy additions
+  ## Ownership
+  - Assign owners, baselines, targets, and review cadence
+  - Publish trade-offs and exceptions with expiry dates
 why_heading: Why SUSTAINABILITY.md?
 framework_heading: The Framework
 framework_cards:
-  - title: Transparency & Disclosure
-    body: Publish scope, baseline metrics, known gaps, and remediation plans with owners and dates.
-  - title: Operational Governance
-    body: Define labels, accountable owners, and merge criteria tied to sustainability thresholds.
-  - title: Automation & Guardrails
-    body: Enforce page-weight budgets, third-party review, media optimization, and regression tracking in CI.
+  - title: Shared Commitment
+    body: Make sustainability explicit in your repo so every contributor understands expectations before shipping code.
+  - title: Measurable Operations
+    body: Define budgets, owners, and review cadence so sustainability becomes trackable work, not an abstract aspiration.
+  - title: Guardrails in CI
+    body: Automate checks for accessibility, performance budgets, and risky additions to prevent regressions at merge time.
 examples_heading: Reference Examples
 reference_cards:
   - title: Full Template
@@ -67,25 +67,47 @@ reference_cards:
     url: ./sustainablewebdesign/
 adopt_heading: How to Adopt
 adopt_steps:
-  - title: 1. Add SUSTAINABILITY.md
-    body: Create it at your repository root and link it from README.
-  - title: 2. Document what matters
-    body: Include scope, metrics baselines, owners, and constraints for AI usage and third-party integrations.
-  - title: 3. Enforce in CI
-    body: Wire page-weight, request-count, and regression checks into pull requests.
-  - title: 4. Keep it living
-    body: Update policy and mappings as architecture, hosting, and tooling evolve.
+  - title: 1. Publish a starter commitment
+    body: Add a short SUSTAINABILITY.md with goals, ownership, and non-negotiable CI gates.
+  - title: 2. Add required CI checks
+    body: Gate pull requests with accessibility checks, Lighthouse scans, and budget regression checks.
+  - title: 3. Adopt the full template
+    body: Add governance, exception handling, metrics baselines, and monthly review process.
+  - title: 4. Ratchet over time
+    body: Raise thresholds progressively as your project stabilizes and contributors build confidence.
 footer_title: SUSTAINABILITY.md
 footer_text: is an open policy format for digital sustainability transparency and governance.
 ---
 
-README files are broad onboarding docs. SUSTAINABILITY.md adds an explicit
-layer for environmental impact decisions, trade-offs, and operational controls.
+Most repositories have README, SECURITY, and CONTRIBUTING files.
+SUSTAINABILITY.md fills an important gap: it states how your project reduces
+digital waste, handles trade-offs, and enforces sustainability in daily work.
+
+## Why teams adopt it
+
+- It creates a clear public commitment that users and contributors can see.
+- It helps maintainers align product, engineering, accessibility, and DevOps.
+- It gives AI coding agents explicit constraints before they generate changes.
+- It turns vague goals into measurable implementation steps.
+
+## What makes this effective
+
+- **Visible policy:** one predictable file in the repo root.
+- **Operational ownership:** named owners, targets, and review cadence.
+- **CI enforcement:** checks that prevent regression, not just aspirational text.
+- **Continuous improvement:** a ratchet model that gets stricter over time.
+
+## Start in under 30 minutes
+
+1. Copy the [template](./SUSTAINABILITY-template.md).
+2. Add project scope, owner, and 3-5 baseline metrics.
+3. Link your SUSTAINABILITY.md from README.
+4. Enable CI gates for accessibility + performance budgets + Lighthouse.
+5. Schedule a monthly review and raise one threshold.
 
 **Status:** Draft (work in progress).
 
 **AI disclosure:** This project has been developed with AI-assisted drafting
 and implementation support, with human review and editing.
 
-Keeping this guidance visible improves transparency, helps teams make
-consistent choices, and gives AI coding agents clearer constraints by default.
+Adopt this now, keep it lightweight, and iterate. Progress over perfection.
