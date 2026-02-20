@@ -40,7 +40,6 @@ jobs:
       - name: Validate WSG_REFERENCES.yaml structure
         run: |
           python - <<'PY'
-          import sys
           import yaml
 
           with open('WSG_REFERENCES.yaml', 'r', encoding='utf-8') as f:
@@ -49,10 +48,16 @@ jobs:
           if not isinstance(data, dict):
               raise SystemExit('WSG_REFERENCES.yaml must parse to a mapping/object at top level')
 
-          required_top_keys = ['wsg_references', 'star_mappings']
-          missing = [k for k in required_top_keys if k not in data]
-          if missing:
-              raise SystemExit(f'Missing top-level keys in WSG_REFERENCES.yaml: {missing}')
+          accepted_schemas = [
+            ['wsg_references', 'star_mappings'],
+            ['guidelines', 'techniques'],
+          ]
+
+          if not any(all(key in data for key in schema) for schema in accepted_schemas):
+            raise SystemExit(
+              'WSG_REFERENCES.yaml must contain either '
+              "['wsg_references', 'star_mappings'] or ['guidelines', 'techniques'] at top level"
+            )
 
           print('WSG_REFERENCES.yaml structure looks valid.')
           PY
