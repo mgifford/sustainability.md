@@ -141,6 +141,7 @@ Add this to `.cursorrules`, `AGENTS.md`, or your system prompt:
 
 - `README.md`: policy and implementation model.
 - `SUSTAINABILITY-template.md`: full reusable policy template for other teams.
+- `examples/SUSTAINABILITY_PROMPT_STARTER.html`: LLM prompt starter for drafting project-specific sustainability policy.
 - `action-playbook.md`: action-oriented checklist for teams and AI agents.
 - `WSG_REFERENCES.yaml`: machine-readable WSG and STAR mapping.
 - `CONTRIBUTING.md`: participation guide for contributors.

@@ -89,6 +89,23 @@
           <strong>{{ page.footer_title }}</strong> {{ page.footer_text }}
         </p>
         <p>
+          <strong>Page emissions:</strong>
+          <span id="footer-co2-estimate">Calculating…</span>
+          ·
+          <strong>Transfer:</strong>
+          <span id="footer-co2-bytes">Calculating…</span>
+          ·
+          <strong>Green hosting:</strong>
+          <span id="footer-green-hosting">Checking…</span>
+        </p>
+        <p>
+          <small>
+            Method: <a href="https://www.thegreenwebfoundation.org/news/start-calculating-digital-carbon-emissions-in-5-minutes-with-co2-js/">CO2.js quickstart</a>
+            ·
+            <a href="https://developers.thegreenwebfoundation.org/co2js/overview/">CO2.js docs</a>
+          </small>
+        </p>
+        <p>
           <a href="{{ '/README.md' | relative_url }}">README</a>
           ·
           <a href="{{ '/WSG_REFERENCES.yaml' | relative_url }}">WSG References</a>
@@ -97,5 +114,63 @@
         </p>
       </footer>
     </div>
+
+    <script type="module">
+      import { co2 } from "https://cdn.jsdelivr.net/npm/@tgwf/co2@latest/dist/esm/index.js";
+      import { check as greenHostingCheck } from "https://cdn.jsdelivr.net/npm/@tgwf/co2@latest/dist/esm/hosting.js";
+
+      const estimateEl = document.getElementById("footer-co2-estimate");
+      const bytesEl = document.getElementById("footer-co2-bytes");
+      const hostingEl = document.getElementById("footer-green-hosting");
+
+      const formatBytes = (bytes) => {
+        if (!Number.isFinite(bytes) || bytes <= 0) return "0 B";
+        const units = ["B", "KB", "MB", "GB"];
+        const exponent = Math.min(Math.floor(Math.log(bytes) / Math.log(1024)), units.length - 1);
+        const value = bytes / (1024 ** exponent);
+        return `${value.toFixed(value >= 10 || exponent === 0 ? 0 : 1)} ${units[exponent]}`;
+      };
+
+      const totalTransferBytes = () => {
+        const navigation = performance.getEntriesByType("navigation");
+        const resources = performance.getEntriesByType("resource");
+        const entries = [...navigation, ...resources];
+
+        return entries.reduce((total, entry) => {
+          const transfer = Number(entry.transferSize) || 0;
+          const encoded = Number(entry.encodedBodySize) || 0;
+          return total + (transfer > 0 ? transfer : encoded);
+        }, 0);
+      };
+
+      const render = async () => {
+        if (!estimateEl || !bytesEl || !hostingEl) return;
+
+        try {
+          const bytes = totalTransferBytes();
+          const calculator = new co2({ model: "swd", version: 4 });
+          const grams = calculator.perVisit(bytes, false);
+
+          bytesEl.textContent = formatBytes(bytes);
+          estimateEl.textContent = Number.isFinite(grams) ? `${grams.toFixed(3)} gCO2e / page view` : "Unavailable";
+        } catch (error) {
+          bytesEl.textContent = "Unavailable";
+          estimateEl.textContent = "Unavailable";
+        }
+
+        try {
+          const isGreenHosted = await greenHostingCheck(window.location.hostname);
+          hostingEl.textContent = isGreenHosted ? "Yes (Green Web Foundation)" : "No / unknown";
+        } catch (error) {
+          hostingEl.textContent = "Unavailable";
+        }
+      };
+
+      if (document.readyState === "complete") {
+        render();
+      } else {
+        window.addEventListener("load", render, { once: true });
+      }
+    </script>
   </body>
 </html>

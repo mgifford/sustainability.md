@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sustainability Prompt Starter · SUSTAINABILITY.md</title>
+    <meta
+      name="description"
+      content="Prompt starter for generating a practical SUSTAINABILITY.md aligned with governance, metrics, and low-impact engineering workflows."
+    />
+    <link rel="stylesheet" href="/sustainability.md/assets/css/site.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <main>
+        <h1 id="prompt-starter-generate-a-first-draft-sustainabilitymd">
+          Prompt Starter: Generate a First-Draft SUSTAINABILITY.md
+        </h1>
+        <p>
+          Copy this prompt into your LLM and replace bracketed placeholders.
+        </p>
+
+        <div class="language-text highlighter-rouge">
+          <div class="highlight">
+            <pre class="highlight"><code>You are a digital sustainability expert helping to create a SUSTAINABILITY.md file for a digital project.
+You would like to build something that is aligned with https://github.com/mgifford/sustainability.md and tailored to the project context.
+
+Goal:
+- Produce a practical first-draft SUSTAINABILITY.md that is transparent, measurable, and usable by both humans and AI coding agents.
+
+Project context (if missing, ask for it first):
+- Project name: [PROJECT_NAME]
+- Repository URL (optional): [REPO_URL]
+- Product type: [WEB_APP / MOBILE / LIBRARY / DOCS / OTHER]
+- Main users: [WHO USES THIS]
+- Primary technologies: [TECH_STACK]
+- Hosting/deployment context: [HOSTING_AND_CI]
+
+Process requirements:
+1) If key information is missing, ask clarifying questions first (max 8).
+2) If a repository URL is provided, infer reasonable defaults from visible docs and clearly mark assumptions.
+3) Keep language operational and specific; avoid vague policy wording.
+4) Include explicit sections for:
+   - Commitment and scope
+   - Baseline metrics and budget thresholds
+   - CI/CD guardrails and regression policy
+   - Third-party and media controls
+   - AI usage policy (minimize by default)
+   - Carbon-aware operations (time shift and space shift)
+   - Ownership, cadence, and escalation path
+   - Exceptions with expiry dates and review owner
+   - How AI coding agents should use this file
+5) Include a "Living Metrics" table with placeholders where data is unknown.
+6) Map major controls to relevant WSG guideline IDs where possible.
+7) Output valid Markdown only.
+
+Reference style:
+- Align with the spirit of SUSTAINABILITY.md examples.
+- Prefer checklists, concrete thresholds, and named owners.
+
+Deliverables:
+- First output: clarifying questions (if needed).
+- Final output: complete SUSTAINABILITY.md draft.</code></pre>
+          </div>
+        </div>
+
+        <h2 id="suggested-clarifying-questions-optional">
+          Suggested Clarifying Questions (optional)
+        </h2>
+        <ul>
+          <li>
+            Which pages, services, or workflows are in scope for sustainability
+            measurement?
+          </li>
+          <li>
+            Which metrics are already tracked (page weight, request count, CI
+            minutes, AI usage)?
+          </li>
+          <li>
+            Which regressions should block merges versus be tracked as debt?
+          </li>
+          <li>
+            Which third-party scripts/services are essential and who approves
+            new ones?
+          </li>
+          <li>
+            What constraints exist around hosting region, runners, and
+            carbon-aware scheduling?
+          </li>
+        </ul>
+      </main>
+      <footer class="site-footer">
+        <p>
+          <strong>SUSTAINABILITY.md</strong> is an open policy format for
+          digital sustainability transparency and governance.
+        </p>
+        <p>
+          <a href="/sustainability.md/README.md">README</a>
+          ·
+          <a href="/sustainability.md/CONTRIBUTING.md">Contributing</a>
+          ·
+          <a href="https://github.com/mgifford/sustainability.md">GitHub Repo</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
