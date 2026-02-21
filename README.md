@@ -116,6 +116,12 @@ Use this file like `SECURITY.md` or `AGENTS.md`: as an operational policy for hu
 - https://w3c.github.io/sustainableweb-wsg/guidelines.json
 - https://github.com/w3c/sustyweb
 - https://w3c.github.io/sustainableweb-wsg/resources.html
+- https://developers.thegreenwebfoundation.org/co2js/overview/
+- https://github.com/thegreenwebfoundation/co2.js/
+- https://observablehq.com/@greenweb/co2-js-playground
+- https://gaw.greenweb.org/grid-intensity/
+- https://github.com/thegreenwebfoundation/grid-intensity
+- https://www.thegreenwebfoundation.org/news/a-new-api-for-grid-aware-websites-and-beyond/
 - https://www.nicchan.me/blog/exploring-grid-aware-websites/
 - https://app.electricitymaps.com/developer-hub/api/getting-started#geolocation
 - https://www.thegreenwebfoundation.org/news/ending-this-month-the-best-chance-in-years-to-fix-the-rules-for-green-energy/

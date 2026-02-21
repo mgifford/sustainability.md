@@ -105,6 +105,29 @@ It is intentionally practical: short checklists, clear ownership, and measurable
 
 ## Carbon-aware operations
 
+## CO2.js measurement guidance
+
+Use CO2.js to keep carbon estimation consistent across teams and PRs.
+
+- Use `perByte(bytes, green)` when you want emissions for a single transfer event (for example: an upload, API payload, or one asset request).
+- Use `perVisit(bytes, green)` when you want an estimated emissions figure for one full page view based on total transfer bytes.
+- If you need explainability for audits, use `perByteTrace` or `perVisitTrace` to capture the variables used in the estimate.
+
+### Practical decision pattern
+
+- Calculate transfer estimates with CO2.js from measured bytes.
+- Fetch current/local grid signal via a grid-aware source.
+- If grid intensity is higher than average, serve a lighter variant (fewer heavy assets, defer non-critical media).
+- If grid intensity is lower than average, allow richer non-critical enhancements.
+
+Reference implementations and docs:
+
+- https://developers.thegreenwebfoundation.org/co2js/overview/
+- https://observablehq.com/@greenweb/co2-js-playground
+- https://gaw.greenweb.org/grid-intensity/
+- https://github.com/thegreenwebfoundation/grid-intensity
+- https://www.thegreenwebfoundation.org/news/a-new-api-for-grid-aware-websites-and-beyond/
+
 ### Time shift
 
 - Schedule deferrable jobs in lower-carbon windows when practical.

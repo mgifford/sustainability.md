@@ -105,6 +105,57 @@ digital waste, handles trade-offs, and enforces sustainability in daily work.
 4. Enable CI gates for accessibility + performance budgets + Lighthouse.
 5. Schedule a monthly review and raise one threshold.
 
+## CO2.js estimate for this page
+
+This site can estimate transfer-related emissions using CO2.js and real page transfer data from the browser Performance API.
+
+- Model used: Sustainable Web Design v4 (`@tgwf/co2`)
+- Input used: total transfer bytes for this page load
+- Note: this is an estimate for one page view and does not include full lifecycle emissions
+
+<p><strong>Estimated transfer emissions:</strong> <span id="co2-estimate">Calculating…</span></p>
+<p><strong>Measured transfer:</strong> <span id="co2-bytes">Calculating…</span></p>
+<p><small>Method and tooling: <a href="https://developers.thegreenwebfoundation.org/co2js/overview/">CO2.js overview</a> · <a href="https://observablehq.com/@greenweb/co2-js-playground">CO2.js playground</a></small></p>
+
+<script type="module">
+  import { co2 } from "https://cdn.jsdelivr.net/npm/@tgwf/co2@latest/dist/esm/index.js";
+
+  const estimateEl = document.getElementById("co2-estimate");
+  const bytesEl = document.getElementById("co2-bytes");
+
+  const formatBytes = (bytes) => {
+    if (!Number.isFinite(bytes) || bytes <= 0) return "0 B";
+    const units = ["B", "KB", "MB", "GB"];
+    const exponent = Math.min(Math.floor(Math.log(bytes) / Math.log(1024)), units.length - 1);
+    const value = bytes / (1024 ** exponent);
+    return `${value.toFixed(value >= 10 || exponent === 0 ? 0 : 1)} ${units[exponent]}`;
+  };
+
+  const totalTransferBytes = () => {
+    const navigation = performance.getEntriesByType("navigation");
+    const resources = performance.getEntriesByType("resource");
+    const entries = [...navigation, ...resources];
+
+    return entries.reduce((total, entry) => {
+      const transfer = Number(entry.transferSize) || 0;
+      const encoded = Number(entry.encodedBodySize) || 0;
+      return total + (transfer > 0 ? transfer : encoded);
+    }, 0);
+  };
+
+  try {
+    const bytes = totalTransferBytes();
+    const calculator = new co2({ model: "swd", version: 4 });
+    const grams = calculator.perVisit(bytes, false);
+
+    bytesEl.textContent = formatBytes(bytes);
+    estimateEl.textContent = Number.isFinite(grams) ? `${grams.toFixed(3)} gCO2e / page view` : "Unavailable";
+  } catch (error) {
+    bytesEl.textContent = "Unavailable";
+    estimateEl.textContent = "Unavailable";
+  }
+</script>
+
 **Status:** Draft (work in progress).
 
 **AI disclosure:** This project has been developed with AI-assisted drafting

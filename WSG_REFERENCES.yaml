@@ -262,3 +262,34 @@ techniques:
     name: "Navigation Implementation Best Practices"
     description: "Code efficient, clear navigation systems"
     url: "https://w3c.github.io/sustyweb/#STAR-WD16-3"
+
+implementation_resources:
+  co2js_overview:
+    name: "CO2.js overview"
+    description: "Official documentation for estimating transfer-related emissions in JavaScript"
+    url: "https://developers.thegreenwebfoundation.org/co2js/overview/"
+
+  co2js_repository:
+    name: "CO2.js repository"
+    description: "Source code and release notes for the Green Web Foundation CO2.js library"
+    url: "https://github.com/thegreenwebfoundation/co2.js/"
+
+  co2js_playground:
+    name: "CO2.js playground"
+    description: "Interactive Observable notebook for experimenting with CO2.js calculations"
+    url: "https://observablehq.com/@greenweb/co2-js-playground"
+
+  grid_intensity_demo:
+    name: "Grid intensity demo"
+    description: "Grid-aware website demo using carbon-intensity-informed behavior"
+    url: "https://gaw.greenweb.org/grid-intensity/"
+
+  grid_intensity_repository:
+    name: "Grid intensity repository"
+    description: "Open source grid intensity polyfill and related implementation examples"
+    url: "https://github.com/thegreenwebfoundation/grid-intensity"
+
+  grid_aware_api_announcement:
+    name: "Grid-aware API announcement"
+    description: "Background on the new API for building grid-aware websites and applications"
+    url: "https://www.thegreenwebfoundation.org/news/a-new-api-for-grid-aware-websites-and-beyond/"

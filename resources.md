@@ -16,6 +16,15 @@ This page provides a focused Jekyll Markdown entry point for WSG resources.
 - [W3C TR: Web Sustainability Guidelines](https://www.w3.org/TR/web-sustainability-guidelines/)
 - [W3C Sustainable Web WG repository](https://github.com/w3c/sustainableweb-wsg)
 
+## CO2 and grid-aware implementation resources
+
+- [CO2.js Overview](https://developers.thegreenwebfoundation.org/co2js/overview/)
+- [CO2.js GitHub repository](https://github.com/thegreenwebfoundation/co2.js/)
+- [CO2.js Playground (Observable)](https://observablehq.com/@greenweb/co2-js-playground)
+- [Grid intensity demo](https://gaw.greenweb.org/grid-intensity/)
+- [Grid intensity polyfill repository](https://github.com/thegreenwebfoundation/grid-intensity)
+- [A new API for grid-aware websites and beyond](https://www.thegreenwebfoundation.org/news/a-new-api-for-grid-aware-websites-and-beyond/)
+
 ## How to use this page
 
 - Use this page as the stable link target from the project homepage.
