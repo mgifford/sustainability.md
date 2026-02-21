@@ -210,6 +210,19 @@ section h2 {
   font-size: 0.95rem;
 }
 
+.footer-metrics {
+  max-width: 1100px;
+  margin: 0.65rem auto;
+}
+
+.footer-cta {
+  margin: 1rem 0 0;
+}
+
+.github-cta {
+  gap: 0.5rem;
+}
+
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
