@@ -53,6 +53,9 @@ reference_cards:
   - title: Policy File
     label: README.md
     url: ./README.md
+  - title: GitHub Actions Guide
+    label: API capabilities for carbon-aware computing
+    url: ./github-actions-sustainability/
   - title: WSG Mapping
     label: WSG_REFERENCES.yaml
     url: ./WSG_REFERENCES.yaml
