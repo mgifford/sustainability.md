@@ -41,6 +41,12 @@ Use this file like `SECURITY.md` or `AGENTS.md`: as an operational policy for hu
 - Enforce media optimization (images, video, fonts) and cache policy.
 - Track changes over time; optimize regressions first, then net-new features.
 
+### 4) Browser support guarantees (device longevity)
+- Support baseline: latest major release plus previous 3 major releases for Chrome, Firefox, and Safari.
+- Treat this as a sustainability requirement to reduce forced hardware/OS churn and extend device life.
+- Core journeys must remain usable on older supported browsers through progressive enhancement.
+- Avoid unnecessary polyfills or heavy bundles that increase transfer and runtime cost.
+
 ---
 
 ## AI usage policy (minimize by default)
@@ -117,12 +123,14 @@ Use this file like `SECURITY.md` or `AGENTS.md`: as an operational policy for hu
 - https://w3c.github.io/sustainableweb-wsg/guidelines.json
 - https://github.com/w3c/sustyweb
 - https://w3c.github.io/sustainableweb-wsg/resources.html
+- https://www.thegreenwebfoundation.org/
 - https://developers.thegreenwebfoundation.org/co2js/overview/
 - https://github.com/thegreenwebfoundation/co2.js/
 - https://observablehq.com/@greenweb/co2-js-playground
 - https://gaw.greenweb.org/grid-intensity/
 - https://github.com/thegreenwebfoundation/grid-intensity
 - https://www.thegreenwebfoundation.org/news/a-new-api-for-grid-aware-websites-and-beyond/
+- https://www.thegreenwebfoundation.org/news/how-do-we-work-out-the-environmental-savings-from-accessibility/
 - https://www.nicchan.me/blog/exploring-grid-aware-websites/
 - https://app.electricitymaps.com/developer-hub/api/getting-started#geolocation
 - https://www.thegreenwebfoundation.org/news/ending-this-month-the-best-chance-in-years-to-fix-the-rules-for-green-energy/

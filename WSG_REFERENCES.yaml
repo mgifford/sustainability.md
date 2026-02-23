@@ -264,6 +264,16 @@ techniques:
     url: "https://w3c.github.io/sustyweb/#STAR-WD16-3"
 
 implementation_resources:
+  green_web_foundation:
+    name: "The Green Web Foundation"
+    description: "Primary organization and knowledge hub for greener internet infrastructure and tooling"
+    url: "https://www.thegreenwebfoundation.org/"
+
+  environmental_savings_accessibility:
+    name: "Environmental savings from accessibility"
+    description: "Analysis of how accessibility improvements can reduce environmental impact and digital waste"
+    url: "https://www.thegreenwebfoundation.org/news/how-do-we-work-out-the-environmental-savings-from-accessibility/"
+
   co2js_overview:
     name: "CO2.js overview"
     description: "Official documentation for estimating transfer-related emissions in JavaScript"
