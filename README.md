@@ -150,6 +150,7 @@ Add this to `.cursorrules`, `AGENTS.md`, or your system prompt:
 
 - `README.md`: policy and implementation model.
 - `SUSTAINABILITY-template.md`: full reusable policy template for other teams.
+- `carbon.txt`: machine-readable sustainability data and disclosure information following the [carbon.txt standard](https://www.thegreenwebfoundation.org/tools/carbon-txt/).
 - `examples/SUSTAINABILITY_PROMPT_STARTER.html`: LLM prompt starter for drafting project-specific sustainability policy.
 - `action-playbook.md`: action-oriented checklist for teams and AI agents.
 - `github-actions-sustainability.md`: detailed guide to GitHub API capabilities and limitations for carbon-aware computing.
