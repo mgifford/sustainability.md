@@ -25,6 +25,10 @@ This page provides a focused Jekyll Markdown entry point for WSG resources.
 - [Grid intensity polyfill repository](https://github.com/thegreenwebfoundation/grid-intensity)
 - [A new API for grid-aware websites and beyond](https://www.thegreenwebfoundation.org/news/a-new-api-for-grid-aware-websites-and-beyond/)
 
+## Disclosure and transparency tools
+
+- [carbon.txt standard](https://www.thegreenwebfoundation.org/tools/carbon-txt/) - Machine-readable sustainability data format for disclosure
+
 ## How to use this page
 
 - Use this page as the stable link target from the project homepage.

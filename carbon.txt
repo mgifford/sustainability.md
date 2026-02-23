@@ -1,0 +1,51 @@
+# Carbon.txt for sustainability.md
+
+# Organization
+Org-name: SUSTAINABILITY.md Project
+Org-url: https://mgifford.github.io/sustainability.md/
+
+# Description
+Description: Documentation and policy templates for web sustainability governance
+
+# Upstream
+Upstream: https://github.com/mgifford/sustainability.md
+
+# Credentials
+# This is an open-source documentation project on GitHub Pages
+
+# Transparency
+Transparency-url: https://mgifford.github.io/sustainability.md/
+Policy-url: https://github.com/mgifford/sustainability.md/blob/main/SUSTAINABILITY.md
+
+# Hosting
+# GitHub Pages (managed hosting, CDN placement not user-selectable)
+Green-hosting: unknown
+Hosting-provider: GitHub Pages
+Hosting-provider-url: https://pages.github.com/
+
+# Carbon footprint
+# This is a static documentation site generated with Jekyll
+# Primary carbon impact comes from:
+# - GitHub Pages hosting and CDN delivery
+# - GitHub Actions CI/CD workflows
+# - AI-assisted content generation (disclosed in repo)
+
+# AI Disclosure
+# This repository has been developed with AI-assisted drafting and
+# implementation support, with human review and editing
+AI-usage: disclosed
+AI-disclosure-url: https://github.com/mgifford/sustainability.md/blob/main/README.md
+
+# Carbon reduction strategies
+# - Minimal page weight and request counts
+# - Static site generation (Jekyll)
+# - Optimized images and assets
+# - CI performance budgets
+# - Documented AI usage policies to minimize compute
+
+# Contact
+Contact: https://github.com/mgifford/sustainability.md/issues
+
+# Version
+Version: 1.0
+Last-updated: 2026-02-23

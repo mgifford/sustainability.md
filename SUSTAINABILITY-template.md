@@ -139,6 +139,13 @@ Suggested workflow policy:
 - Web Sustainability Guidelines: https://www.w3.org/TR/web-sustainability-guidelines/
 - Sustainable Web Design: https://sustainablewebdesign.org/
 - Green Web Foundation CO2.js: https://github.com/thegreenwebfoundation/co2.js
+- Carbon.txt standard: https://www.thegreenwebfoundation.org/tools/carbon-txt/
+
+## Disclosure practices
+
+Consider creating a `carbon.txt` file in your project root to provide machine-readable sustainability data and disclosure information.
+This follows the [carbon.txt standard](https://www.thegreenwebfoundation.org/tools/carbon-txt/) developed by the Green Web Foundation,
+making it easier for tools and services to discover and use your sustainability information.
 
 ## AI agent instruction block
 
