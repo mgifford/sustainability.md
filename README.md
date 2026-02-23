@@ -84,6 +84,7 @@ Use this file like `SECURITY.md` or `AGENTS.md`: as an operational policy for hu
 - **GitHub Pages:** deployment region is managed by GitHub/CDN and not user-pinable in a strict way.
 - **GitHub Actions (hosted runners):** exact physical region and real-time energy mix are not guaranteed or directly selectable in most workflows.
 - Practical workaround: use self-hosted runners in known regions for energy-aware jobs, and trigger only deferrable tasks there.
+- For detailed analysis of GitHub's API capabilities and limitations, see [GitHub Actions and Sustainability](github-actions-sustainability.md).
 
 ---
 
@@ -143,6 +144,7 @@ Add this to `.cursorrules`, `AGENTS.md`, or your system prompt:
 - `SUSTAINABILITY-template.md`: full reusable policy template for other teams.
 - `examples/SUSTAINABILITY_PROMPT_STARTER.html`: LLM prompt starter for drafting project-specific sustainability policy.
 - `action-playbook.md`: action-oriented checklist for teams and AI agents.
+- `github-actions-sustainability.md`: detailed guide to GitHub API capabilities and limitations for carbon-aware computing.
 - `WSG_REFERENCES.yaml`: machine-readable WSG and STAR mapping.
 - `CONTRIBUTING.md`: participation guide for contributors.
 
