@@ -41,9 +41,6 @@ framework_cards:
     body: Automate checks for accessibility, performance budgets, and risky additions to prevent regressions at merge time.
 examples_heading: Reference Examples
 reference_cards:
-  - title: Prompt Starter
-    label: SUSTAINABILITY_PROMPT_STARTER.html
-    url: ./examples/SUSTAINABILITY_PROMPT_STARTER.html
   - title: Full Template
     label: SUSTAINABILITY-template.md
     url: ./SUSTAINABILITY-template.md
@@ -110,15 +107,6 @@ digital waste, handles trade-offs, and enforces sustainability in daily work.
 3. Link your SUSTAINABILITY.md from README.
 4. Enable CI gates for accessibility + performance budgets + Lighthouse.
 5. Schedule a monthly review and raise one threshold.
-
-## CO2.js estimate for this page
-
-This site estimates transfer-related emissions using CO2.js and real page transfer data from the browser Performance API.
-
-- Model used: Sustainable Web Design v4 (`@tgwf/co2`)
-- Input used: total transfer bytes for this page load
-- Note: this is an estimate for one page view and does not include full lifecycle emissions.
-- The current estimate and hosting status are shown in the footer after page load.
 
 **Status:** Draft (work in progress).
 
